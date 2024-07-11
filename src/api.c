@@ -45,8 +45,8 @@ tApiError api_loadData(tApiData* data, const char* filename, bool reset) {
     tApiError error = csv_read(csv, filename, ',');
     
     if (error == E_SUCCESS) {
-    
-        if (csv->header_count != 7) {
+		const int maxHeaderCount = 7;
+        if (csv->header_count != maxHeaderCount) {
             perror("Error getting header\n");
             csv_free(csv);
             free(csv);
