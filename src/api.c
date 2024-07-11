@@ -269,21 +269,6 @@ tApiError api_remove_geodata(tApiData* data, tDateTime ini, tDateTime end) {
     }
 }
 
-/*tApiError api_count_persons(const tApiData* data, tDateTime init, tDateTime end, int* count) {
-    if (data) {
-        tTemporalNode* aux = data->temporal_node;
-        *count = 0;
-        while (aux) {
-            if (temporalNode_cmpDate(aux, init) >= 0 && temporalNode_cmpDate(aux, end) <= 0) {
-                *count += temporalNode_countPersons(aux);
-            }
-            aux = aux->next;
-        }
-        return E_SUCCESS;
-    } else {
-        return E_MEMORY_ERROR;
-    }
-}*/
 
 tApiError api_persons_in_contact(const tApiData* data, tDateTime ini, tDateTime end, const char* document, tPopulation* population) {
     if (data && document && population) {
